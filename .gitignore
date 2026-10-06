@@ -1,22 +1,23 @@
-# --- Pesos del modelo (NO se versionan: son GB y tienen licencia propia) ---
+# --- Pesos del modelo (NO se versionan) ---
 pesos/*
 !pesos/.gitkeep
 *.pt
 *.pth
 *.safetensors
 
-# --- Datos (cada quien trae los suyos) ---
+# --- Datos originales ---
 datos/raw/*
 !datos/raw/.gitkeep
-datos/referencias/*
-!datos/referencias/.gitkeep
-datos/salida/*
-!datos/salida/.gitkeep
+
+# --- Datos de salida ---
+datos/salida/debug*/
+datos/salida/debug*/
 
 # --- Python ---
 __pycache__/
 *.py[cod]
 .venv/
+.venv312/
 venv/
 env/
 *.egg-info/
@@ -27,3 +28,8 @@ env/
 Thumbs.db
 .vscode/
 .idea/
+
+# --- Archivos locales de pruebas y respaldos ---
+datos/salida/prueba/
+scripts/*_backup.py
+sam3/

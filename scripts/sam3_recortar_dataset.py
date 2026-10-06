@@ -137,6 +137,8 @@ class SegmentadorSAM3:
             checkpoint_path=checkpoint,
             load_from_HF=checkpoint is None,
         )
+        if dispositivo == "cpu":
+            modelo = modelo.float()
         self.procesador = Sam3Processor(
             modelo, device=dispositivo, confidence_threshold=umbral
         )
@@ -443,7 +445,9 @@ def main():
                 ancho, alto = imagen.size
                 dets = segmentador.detectar(imagen, prompts)
                 dets = filtrar_detecciones(dets, ancho, alto, args)
-            except Exception as e:  # una imagen corrupta no debe tumbar todo el proceso
+            except Exception as e:
+                import traceback
+                traceback.print_exc()  # una imagen corrupta no debe tumbar todo el proceso
                 stats["errores"] += 1
                 print(f"\n[ERROR] {ruta.name}: {e}", flush=True)
                 continue
@@ -540,3 +544,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

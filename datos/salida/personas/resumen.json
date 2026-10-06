@@ -1,0 +1,39 @@
+{
+  "prompts": {
+    "persona": "person"
+  },
+  "parametros": {
+    "entrada": "datos\\raw",
+    "salida": "datos\\salida\\personas",
+    "prompt": [
+      "persona=person"
+    ],
+    "recursivo": false,
+    "limite": 100,
+    "umbral": 0.5,
+    "area_min": 0.001,
+    "area_max": 0.95,
+    "lado_min": 32,
+    "max_por_imagen": 0,
+    "iou_duplicado": 0.85,
+    "sin_bordes": false,
+    "referencias": null,
+    "umbral_similitud": 0.5,
+    "fondo": "original",
+    "padding": 0.05,
+    "tamano": 0,
+    "exportar_yolo": false,
+    "guardar_rechazados": false,
+    "checkpoint": "pesos\\sam3.pt",
+    "dispositivo": "cpu"
+  },
+  "estadisticas": {
+    "imagenes": 100,
+    "con_objetos": 100,
+    "errores": 0,
+    "rechazados_sim": 0,
+    "recortes_por_clase": {
+      "persona": 1134
+    }
+  }
+}

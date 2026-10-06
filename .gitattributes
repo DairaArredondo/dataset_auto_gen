@@ -1,0 +1,1 @@
+datos/salida/personas/*.jpg filter=lfs diff=lfs merge=lfs -text
